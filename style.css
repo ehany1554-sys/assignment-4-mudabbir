@@ -1,0 +1,813 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 9px;
+background-color: rgba(125, 125, 125, .3)}
+  
+    
+.div1 {
+    grid-column: span 6 / span 6;
+    grid-row: span 1/ span 1;  
+      grid-row-start: 1;
+ }
+.div2 {
+    grid-column: span 1 / span 1;
+    grid-row: span 15/ span 15;
+    grid-column-start: 7;
+    background-color:  rgba(0,125,0, .1);
+     }
+.div3 {
+    grid-column: span 2/ span 2;
+    grid-row: span 1 / span 1;
+    grid-row-start: 2;
+    
+    }
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 1/ span 1;
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 1/ span 1;
+    grid-column-start: 5;
+    grid-row-start: 2;
+}
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3/ span 3 ;
+    grid-column-start: 5;
+    grid-row-start: 3;
+}
+.div7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3/ span 3;
+    grid-column-start: 5;
+    grid-row-start: 6;
+}
+.div8 {
+    grid-column: span 4 / span 4;
+    grid-row: span 6 / span 6;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+.div9 {
+    grid-column: span 2 / span 2; 
+    grid-row: span 7/ span 7;
+    grid-column-start: 5;
+    grid-row-start: 9;
+}
+.div10 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4/ span 4;
+    grid-column-start: 3;
+    grid-row-start: 9;
+    
+}
+.div15 {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+    grid-column-start: 3;
+    grid-row-start: 12;
+}
+.div17 {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+    grid-column-start: 1;
+    grid-row-start: 9;
+}
+        .nav{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+            
+          /* padding: 20px; */
+            border-radius: 25px;
+            background-color: rgb(179, 208, 242);
+            /* margin: auto; */
+        }
+        .left{
+            width:50%;
+            position: relative;
+            /* background-color: brown; */
+            padding-block: 30px;
+        }
+        .me{
+            position: absolute;
+           left: 20%;
+           top: 15%;
+           border-radius: 10px;
+           /* padding-inline: 10px;  */
+            background-color: aliceblue;
+            
+        }
+        .right{
+        padding-left:10px ;
+        }
+/* إعدادات المتغيرات والألوان الأساسية */
+:root {
+  --primary-blue: #1e56a0;
+  --light-blue-bg: #eef4fc;
+  --text-dark: #2b3a4a;
+  --text-muted: #8c9ba5;
+  --bg-color: #f7f9fc;
+  --font-family: 'Cairo', sans-serif;
+}
+/* القائمة الجانبية */
+.sidebar {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-left: 1px solid #0b0b0b;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+   padding:10px;  
+   border-radius: 25px;
+   
+
+}
+
+/* منطقة اللوجو والشعار */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 10 8px;
+
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   /* padding:10px; */
+  font-size: 20px;
+}
+
+.brand-text h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-dark);
+   padding:10px;
+  line-height: 1.1;
+}
+
+.brand-text p {
+  font-size: 12px;
+  color: var(--text-muted);
+   padding:10px;
+  font-weight: 600;
+}
+
+/* روابط القائمة */
+.menu {
+  display: flex;
+  flex-direction: column;
+   padding:10px;
+  gap: 6px;
+   
+    
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 16px;
+  /* margin-top: 90px; */
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.menu-item i {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+  color: rgba(0, 0, 125 , .1);
+   padding:10px;
+}
+
+.menu-item:hover {
+  background-color: #f0f4f9;
+}
+
+/* العنصر النشط (الصفحة الرئيسية) */
+.menu-item.active {
+  background-color: var(--light-blue-bg);
+   padding: 10px;
+  color: var(--primary-blue);
+}
+
+.menu-item.active i {
+  color: var(--primary-blue);
+  
+}
+
+/* قسم إجراءات سريعة */
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 24px 8px 10px 8px;
+  padding:10px;
+}
+
+/* أنماط الأيقونات الملهمة للإجراءات السريعة */
+.action-item i.action-icon {
+  color: var(--primary-blue);
+  opacity: 0.85;
+   padding:10px;
+}
+
+.action-item:hover i.action-icon {
+  opacity: 1;
+}
+.input{
+    width: 100%;
+    background-color: white;
+   height: 100%;
+    border-radius: 10px;
+    border: solid black 4px;
+    text-align: right;
+}
+.input h1 {
+color: #0b0b0b;
+text-align: center;
+}
+.input h2 {
+color: #097107;
+text-align: center;
+}
+.input h3 {
+color: #5e5b5b;
+text-align: center;
+}
+.div5 h2{
+    color: #f30808;
+}
+.active{
+    background-color: #fbfffb;
+    text-align: right;
+    border: solid rgba(220, 220, 220, .1) 10px;
+    border-radius: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.create{
+    background-color: rgba(0, 0, 125 , .1);
+    height: 30%;
+    padding-top: 20px;
+    position: relative;
+    text-align: right;
+    margin: 10px;
+    border-radius: 25px;
+}
+.create h1{
+    text-align: right;
+color: #000;
+padding: 5px;
+}
+.create h2{
+  text-align:left ;
+  position: absolute;
+  top: 10%;
+color: #4205f9;
+padding: 5px;
+}
+.create h4{
+    text-align: right;
+color: #6a6666;
+padding: 5px;
+}
+.create h3{
+    text-align: right;
+color: #6a6666;
+padding: 5px;
+}
+.injoin{
+    background-color:rgba(0,125,0, .1) ;
+    height: 30%;
+    padding-top: 20px;
+    position: relative;
+    text-align: right;
+    margin: 10px;
+    border-radius: 25px
+}
+.injoin h1{
+    text-align: right;
+color: #000;
+padding: 5px;
+}
+.injoin h2{
+  text-align:left ;
+  position: absolute;
+  top: 10%;
+color: #47e03f;
+padding: 5px;
+}
+.injoin h4{
+    text-align: right;
+color: #6a6666;
+padding: 5px;
+}
+.injoin h3{
+    text-align: right;
+color: #6a6666;
+padding: 5px;
+}
+
+
+
+.container{
+    background-color: #f0f4f9;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    padding: 10px;
+    border: solid rgba(220, 220, 220, .1) 10px;
+    
+}
+.container h1{
+    text-align: right;
+}
+.container h2{
+    text-align: center;
+}
+.container p{
+    text-align: center;
+    margin-top: 9px;
+}
+.ele{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    width: 100%;
+    margin-top: 19px;
+
+}
+.wifi{
+    border: solid white 2px;
+    border-radius: 8px;
+    width: 48%;
+    text-align: center;
+    background-color: whitesmoke;
+}
+.power{
+    border: solid white 2px;
+    border-radius: 8px;
+    width: 48%;
+    text-align: center;
+    margin: auto;
+    background-color: whitesmoke;
+}
+.wifi h2 {
+    color: #6a6666;
+}
+.wifi h3{
+    color: red;
+}
+.wifi h1{
+    color: rgb(15, 15, 15);
+    text-align: center;
+}
+
+.power h1{
+    color: rgb(9, 9, 9);
+    text-align: center;
+}
+.power h2 {
+    color: #6a6666;
+}
+.power h3{
+    color: rgb(217, 168, 31);
+}
+
+.power h1{
+    color: rgb(9, 9, 9);
+    text-align: center;
+}
+.net{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    width: 100%;
+    margin-top: 19px;
+
+}
+.table{
+background-color: white;
+text-align: right;
+border-radius: 25px; 
+height: 100%;
+/* margin: 15px; */
+}
+.table table{
+    background-color: white;
+    width: 80%;
+  
+    width: 100%;
+    direction: rtl;
+    border-radius: 25px;
+
+}
+.pin{background-color: rgba(0, 0, 125 , .1);
+border-radius: 25px;
+text-align: center;}
+.comp{
+    background-color: rgba(0, 125, 0, .1);
+}
+.pouns{color: rgba(0, 125, 0, .8);
+text-align: center;}
+td{text-align: center;}
+.table table td{
+  margin-block: 10px; 
+  padding-block: 10.2px;
+}
+
+
+
+
+
+
+
+
+.total{
+    text-align: right;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.total1{
+    background-color: rgba(0, 0, 125, .1);
+    width: 80%;
+    border-radius: 25px;
+    padding: 10px;
+    border: solid white 5px;
+        margin: auto;
+    transition: all .4;
+
+}
+.totalright{
+    text-align: right;
+}
+.totalleft{
+    text-align: left;
+}
+.line{
+    width: 80%;
+    margin: auto;
+    height: 10px;
+    position: relative;
+    background-color: #8c9ba5;
+    border-radius: 25px;
+}
+.gpa{
+    position: absolute;
+    background-color: #4205f9;
+    height: 10px;
+    left: 17.5%;
+    width: 83%;
+    border-radius: 25px;
+}
+.card{
+  background-color: whitesmoke;
+    width: 80%;
+    border-radius: 25px;
+    padding: 10px;
+    border: solid white 5px;
+    position: relative;    margin: auto;transition: all .4s;
+    
+}
+.card:hover{ background-color:rgba(0, 0, 0 ,.5);}
+    
+.dane{
+    border-radius: 25px;
+background-color: rgba(0, 125, 0, .1);
+position: absolute;
+top: 20px;
+left: 20px;
+}
+.gpa1{
+    position: absolute;
+    background-color: #f90505;
+    height: 10px;
+left: 40%;
+    width: 60%;
+    border-radius: 25px;
+    direction:rtl ;
+}.gpa2{
+    position: absolute;
+    background-color: #cf950d;
+    height: 10px;
+/* left: 40%; */
+    width: 100%;
+    border-radius: 25px;
+    direction:rtl ;
+}
+.gpa3{
+    position: absolute;
+    background-color: #cf0dc2;
+    height: 10px;
+left: 20%;
+    width: 80%;
+    border-radius: 25px;
+    direction:rtl ;
+}
+.gpa4{
+    position: absolute;
+    background-color: #3ef48d;
+    height: 10px;
+left: 16%;
+    width: 84%;
+    border-radius: 25px;
+    direction:rtl ;
+}
+
+
+
+/* .grif{
+    text-align: right;
+    background-color:whitesmoke ;
+    border: solid white 7px ;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+.grifg{
+height: 20px;
+background-color: #097107;
+border-radius: 20px 0 0 0;
+}
+.grifr{
+height: 8px;
+background-color: #9b0505;
+border-radius: 20px 0 0 0;
+}
+.griff{
+    text-align: bottom;
+} */
+ /* الكارت الخارجي */
+.chart-card {
+  background-color: #e5ebed;
+  width: 100%;
+  /* max-width: 650px; */
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* العنوان */
+.chart-title {
+  color: #2b3a42;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+/* مفتاح البيان (Legend) */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-label {
+  color: #334155;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.color-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+/* الألوان المطابقة للصورة */
+.income-bg, .bar.income {
+  background-color: #05a863;
+}
+
+.expense-bg, .bar.expense {
+  background-color: #e03137;
+}
+
+/* حاوية الأعمدة */
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 220px;
+  border-bottom: 2px solid #cbd5e1;
+  padding-bottom: 10px;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+}
+
+/* الأشرطة */
+.bar {
+  width: 18px;
+  height: var(--height);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.4s ease;
+}
+
+/* أسماء الأسابيع في الأسفل */
+.group-label {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+
+
+
+
+
+/* الكارت الخارجي */
+.account-summary-card {
+  background-color: #e6edf2;
+  width: 100%;
+  /* max-width: 550px; */
+  padding: 24px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* الهيدر والعنوان */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-header h2 {
+  color: #1a202c;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.details-link {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.details-link:hover {
+  color: #2b6cb0;
+}
+
+/* قائمة العناصر */
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.account-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* معلومات الحساب والأيقونة */
+.account-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+/* ألوان الأيقونات للخلفية والنص */
+.current-icon {
+  background-color: #dcebf7;
+  color: #1d70b8;
+}
+
+.savings-icon {
+  background-color: #d7f2e3;
+  color: #109153;
+}
+
+.credit-icon {
+  background-color: #ebdff7;
+  color: #6b46c1;
+}
+
+/* نصوص الحساب */
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.account-type {
+  color: #1a202c;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.account-bank, 
+.credit-limit {
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+/* المبالغ المالية */
+.account-balance {
+  color: #1a202c;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  gap: 6px;
+}
+
+.account-balance.negative {
+  color: #e53e3e; /* اللون الأحمر للرصيد بالسالب */
+}
+
+.img{
+    text-align: right;
+    background-color: whitesmoke;
+    border: solid white 7px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px;
+    height: 100%;
+       
+} 
+.img img{ transition: 3s;}
+      
+
+
+.img img:hover{
+transform: rotateY(360deg);
+}
+
